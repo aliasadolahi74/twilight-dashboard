@@ -1,11 +1,39 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    publicRuntimeConfig: {
-        CLIENT_BACKEND_BASE_URL: process.env.CLIENT_BACKEND_BASE_URL ?? "",
+
+    webpack(config) {
+        const fileLoaderRule = config.module.rules.find((rule) =>
+            rule.test?.test?.('.svg'),
+        )
+
+        config.module.rules.push(
+            {
+                ...fileLoaderRule,
+                test: /\.svg$/i,
+                resourceQuery: /url/, // *.svg?url
+            },
+            {
+                test: /\.svg$/i,
+                issuer: fileLoaderRule.issuer,
+                resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
+                use: ['@svgr/webpack'],
+            },
+        )
+        fileLoaderRule.exclude = /\.svg$/i
+
+        return config
     },
-    serverRuntimeConfig: {
-        BACKEND_BASE_URL: process.env.BACKEND_BASE_URL ?? "",
-    }
+
+
+    async redirects() {
+        return [
+            {
+                source: '/',
+                destination: '/home',
+                permanent: true,
+            },
+        ]
+    },
 };
 
 export default nextConfig;
