@@ -6,8 +6,18 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "prepare": "husky"
   },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "next lint --fix --file",
+      "prettier --write"
+    ],
+    "*.{css,md,json}": [
+      "prettier --write"
+    ]
+  }
   "dependencies": {
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
