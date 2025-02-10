@@ -6,6 +6,9 @@ const SidebarLayout: React.FC<{ children: React.ReactNode }> = ({children}) => {
         <div className="h-screen w-full">
             <DashboardSidebar />
             {children}
+
+
+            sdfsafd
         </div>
     );
 };
