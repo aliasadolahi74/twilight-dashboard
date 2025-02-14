@@ -1,1 +1,9 @@
-export {default as LogoIcon} from "./icons/logo.svg"
+export { default as LogoIcon } from "./icons/logo.svg";
+export { default as ChevronRightIcon } from "./icons/chevron-right.svg";
+export { default as MagnifierIcon } from "./icons/magnifier.svg";
+export { default as HomeIcon } from "./icons/home.svg";
+export { default as StarIcon } from "./icons/star.svg";
+export { default as PersonIcon } from "./icons/person.svg";
+export { default as PuzzleIcon } from "./icons/puzzle.svg";
+export { default as GearIcon } from "./icons/gear.svg";
+export { default as DollarIcon } from "./icons/dollar.svg";
