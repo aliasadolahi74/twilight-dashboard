@@ -32,6 +32,16 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.noscrollbar::-webkit-scrollbar {
+    display: none;
+}
+.noscrollbar {
+    scrollbar-width: none;
+}
+.noscrollbar {
+    -ms-overflow-style: none;
+}
+
 @layer utilities {
     .text-balance {
         text-wrap: balance;

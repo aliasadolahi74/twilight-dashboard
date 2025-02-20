@@ -1,6 +1,7 @@
 "use client";
 import React, { createContext, SetStateAction, useState } from "react";
 import MenuItem from "@/src/features/Dashboard/DashboardMenu/MenuItem";
+import uniqueId from "lodash/uniqueId";
 
 type IDashboardItemProps = {
   items: IDashboardItemType[];
@@ -17,7 +18,19 @@ const DashboardMenu: React.FC<IDashboardItemProps> = ({ items }) => {
     <DashboardMenuContext.Provider value={{ activeItem, setActiveItem }}>
       <div className='flex flex-col w-full gap-1'>
         {items?.map((menuItem) => {
-          return <MenuItem properties={menuItem} key={menuItem.slug} />;
+          if (menuItem.slug === "__SEPARATOR__") {
+            return (
+              <div
+                key={uniqueId(menuItem.slug)}
+                className='w-full border-b border-b-neutral-100 opacity-20 my-[21px]'
+              />
+            );
+          }
+          return (
+            <div key={menuItem.slug} className='w-full px-[28px]'>
+              <MenuItem properties={menuItem} />
+            </div>
+          );
         })}
       </div>
     </DashboardMenuContext.Provider>
