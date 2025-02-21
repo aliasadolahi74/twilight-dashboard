@@ -7,3 +7,8 @@ export { default as PersonIcon } from "./icons/person.svg";
 export { default as PuzzleIcon } from "./icons/puzzle.svg";
 export { default as GearIcon } from "./icons/gear.svg";
 export { default as DollarIcon } from "./icons/dollar.svg";
+export { default as SuitcaseIcon } from "./icons/suitcase.svg";
+export { default as ProductIcon } from "./icons/product.svg";
+export { default as ThreeHorizontalDotsIcon } from "./icons/three-horizontal-dots.svg";
+export { default as IncreaseIcon } from "./icons/increase.svg";
+export { default as DecreaseIcon } from "./icons/decrease.svg";

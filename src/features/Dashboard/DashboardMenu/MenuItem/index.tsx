@@ -29,7 +29,7 @@ const MenuItem: React.FC<IMenuItemProps> = ({ properties }) => {
             "!text-primary": isActive,
           })}
         >
-          <span>{icon}</span>
+          <span className='[&>svg]:w-[15px]'>{icon}</span>
           <span className='text-14'>{title}</span>
         </div>
         {submenu && submenu.length > 0 && (

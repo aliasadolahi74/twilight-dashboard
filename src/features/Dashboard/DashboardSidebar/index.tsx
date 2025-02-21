@@ -18,6 +18,7 @@ const DashboardSidebar: React.FC = () => {
       slug: "dashboard",
       title: "Dashboard",
       icon: <HomeIcon />,
+
       submenu: [
         {
           slug: "dashboard/all-pages",
@@ -46,7 +47,7 @@ const DashboardSidebar: React.FC = () => {
   ];
 
   return (
-    <aside className='w-[300px] noscrollbar overflow-y-auto h-full max-h-screen bg-background shadow-3 py-10'>
+    <aside className='w-[300px] shrink-0 noscrollbar overflow-y-auto bg-background shadow-3 py-10'>
       <div className='sticky top-0 bg-neutral-800 z-10 pb-8'>
         <header className='flex sticky top-0 flex-row items-center justify-between px-[28px]'>
           <div className='flex flex-row items-center gap-2'>
